@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuckOS Sign Up</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dekko:wght@400;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&display=swap');
+
+      body {
+        background-image: url('/system/media/backgrounds/login.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .ducklogo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px solid transparent;
+      }
+
+      form {
+        font-family: overlock;
+        position: absolute;
+        top: calc(30% + 200px);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+     .hidden {
+        display: none;
+      }
+
+      input {
+        position: relative;
+        text-align: center;
+        margin: 10px;
+        border-radius: 15px;
+        padding: 10px;
+        background-color: rgba(30, 30, 30, 0.3);
+        border: 0.1px solid transparent;
+        transition: transform 0.3s ease;
+        color: black;
+        backdrop-filter: blur(1000px);
+      }
+
+      input:focus {
+        transform: scale(1.1);
+        border: 0.1px solid transparent;
+        outline: 0.1px solid transparent;
+      }
+      input::placeholder {
+        color: black;
+      }
+    </style>
+
+  </head>
+  <body>
+    <img
+      src="/system/media/favicons/Duck.png"
+      alt="DuckOS Logo"
+      class="ducklogo"
+    />
+
+    <form method="POST" id="signUp">
+      <label for="username">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+      /></label>
+      <label for="password" id="passwordLabel" class="hidden">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          class="hidden"
+          required
+        />
+      </label>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script type="module" src="/system/lib/firebase.js"></script>
+    <script type="module" src="/system/lib/signup.js"></script>
+  </body>
+</html>
