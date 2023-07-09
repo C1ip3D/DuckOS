@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .createUserWithEmailAndPassword(userEmail, password)
         .then(function (user) {
           console.log(user);
-          window.location.href = 'login.html';
+          window.location.href = 'main.html';
         })
         .catch(function (error) {
           console.log(error);
